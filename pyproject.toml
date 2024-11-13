@@ -11,7 +11,7 @@ keywords = ["nso", "mvr", "reconciliation", "cisco", "network", "automation"]
 include = [
     "mvr_make_package/mvr-template/**"
 ]
-
+exclude = ["**/__pycache__"]
 [tool.poetry.dependencies]
 python = "^3.8"
 cookiecutter = "^2.6.0"
