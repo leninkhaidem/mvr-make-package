@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mvr-make-package"
-version = "0.0.1"
+version = "0.0.2"
 description = "NSO MVR package generator"
 authors = ["Lenin Khaidem <leninkhaidem@gmail.com>"]
 license = "MIT"
