@@ -11,7 +11,7 @@ keywords = ["nso", "mvr", "reconciliation", "cisco", "network", "automation"]
 include = [
     "mvr_make_package/mvr-template/**"
 ]
-exclude = ["**/__pycache__"]
+exclude = ["mvr_make_package/**/__pycache__"]
 [tool.poetry.dependencies]
 python = "^3.8"
 cookiecutter = "^2.6.0"
@@ -36,7 +36,7 @@ version_variables = ["mvr_make_package/__init__.py:__version__"]
 version_toml = [
     "pyproject.toml:tool.poetry.version"
 ]
-build_command = "mkdir -p dist2>/dev/null || echo && rm -rf dist/* && pip install poetry && poetry build -f wheel"
+build_command = "mkdir -p dist>/dev/null || echo && rm -rf dist/* && pip install poetry && poetry build -f wheel"
 
 [tool.semantic_release.branches.main]
 match = "(main|master)"
