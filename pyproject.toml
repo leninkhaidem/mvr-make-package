@@ -1,0 +1,95 @@
+[tool.poetry]
+name = "mvr-make-package"
+version = "0.0.1"
+description = "NSO MVR package generator"
+authors = ["Lenin Khaidem <leninkhaidem@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+documentation = "https://leninkhaidem.github.io/mvr-make-package/"
+repository = "https://github.com/leninkhaidem/mvr-make-package"
+keywords = ["nso", "mvr", "reconciliation", "cisco", "network", "automation"]
+include = [
+    "mvr_make_package/mvr-template/**"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cookiecutter = "^2.6.0"
+rich = "^13.9.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+assets = []
+build_command_env = []
+commit_message = "chore(release): {version} [skip ci]"
+commit_parser = "angular"
+logging_use_named_masks = false
+major_on_zero = true
+allow_zero_version = true
+no_git_verify = false
+tag_format = "v{version}"
+version_variables = ["mvr_make_package/__init__.py:__version__"]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
+]
+build_command = "mkdir -p dist2>/dev/null || echo && rm -rf dist/* && pip install poetry && poetry build -f wheel"
+
+[tool.semantic_release.branches.main]
+match = "(main|master)"
+prerelease_token = "rc"
+prerelease = false
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = []
+mode = "init"
+insertion_flag = "<!-- version list -->"
+template_dir = "templates"
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+output_format = "md"
+
+[tool.semantic_release.changelog.environment]
+block_start_string = "{%"
+block_end_string = "%}"
+variable_start_string = "{{"
+variable_end_string = "}}"
+comment_start_string = "{#"
+comment_end_string = "#}"
+trim_blocks = false
+lstrip_blocks = false
+newline_sequence = "\n"
+keep_trailing_newline = false
+extensions = []
+autoescape = false
+
+[tool.semantic_release.commit_author]
+env = "GIT_COMMIT_AUTHOR"
+default = "semantic-release <semantic-release>"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = ["build", "chore", "ci", "docs", "feat", "fix", "perf", "style", "refactor", "test"]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+default_bump_level = 0
+
+[tool.semantic_release.remote]
+name = "origin"
+type = "github"
+ignore_token_for_push = false
+insecure = false
+
+[tool.semantic_release.publish]
+dist_glob_patterns = ["dist/*"]
+upload_to_vcs_release = true
+
+[semantic_release.remote.token]
+env = "GH_TOKEN_PUB"
+
+[tool.poetry.scripts]
+mvr-make-package = "mvr_make_package.cli:main"
+

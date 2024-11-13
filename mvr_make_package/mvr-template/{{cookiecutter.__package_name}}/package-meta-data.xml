@@ -1,0 +1,15 @@
+
+<ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
+    <name>{{cookiecutter.__package_name}}</name>
+    <package-version>0.0.1</package-version>
+    <description>{{ cookiecutter.package_description }}</description>
+    <ncs-min-version>{{ cookiecutter.min_ncs_version }}</ncs-min-version>
+    <component>
+    <name>main</name>
+    <application>
+      <python-class-name>{{cookiecutter.__module_name}}.Main</python-class-name>
+    </application>
+  </component>
+</ncs-package>
+
+    

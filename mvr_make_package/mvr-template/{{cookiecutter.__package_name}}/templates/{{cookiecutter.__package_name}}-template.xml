@@ -1,0 +1,4 @@
+<config-template xmlns="http://tail-f.com/ns/config/1.0">
+    <!-- any xml template - may be device, rfs, or inventory -->
+    <!-- you can create N number of templates -->
+</config-template>

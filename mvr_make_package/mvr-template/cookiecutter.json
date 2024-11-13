@@ -1,0 +1,12 @@
+{
+    "package_name": "mvr package name",
+    "min_ncs_version": "5.0",
+    "__package_name": "{{ cookiecutter.package_name|lower|replace(' ', '-') }}",
+    "__module_name": "{{ cookiecutter.__package_name|lower|replace('-', '_') }}",
+    "package_description": "package description",
+    "__prompts__": {
+        "package_name": "name of the mvr package",
+        "min_ncs_version": "mininum ncs version",
+        "package_description": "mvr package description"
+    }
+}

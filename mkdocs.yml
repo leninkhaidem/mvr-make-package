@@ -1,0 +1,74 @@
+site_name: MVR Make Package
+repo_url: https://github.com/leninkhaidem/mvr-make-package
+repo_name: repo
+extra:
+  version:
+    provider: mike
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    logo: material/language-python
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: indigo
+      accent: green
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: blue
+      accent: purple
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - navigation.path
+    - navigation.instant
+    - navigation.prune
+    - toc.follow
+  language: en
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+
+    # Add more modules and submodules here
+
+plugins:
+  - search
+  - termynal
+  - mike:
+      # These fields are all optional; the defaults are as below...
+      alias_type: redirect
+      redirect_template: null
+      deploy_prefix: ""
+      canonical_version: null
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+
+nav:
+  - MVR Make Package: index.md

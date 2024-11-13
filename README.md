@@ -1,2 +1,3 @@
-# mvr-make-package
-Cisco NSO MVR package generator
+# MVR NSO Package Generator
+
+Refer to the documentation [here](https://leninkhaidem.github.io/mvr-make-package/)

@@ -1,0 +1,50 @@
+module  {{cookiecutter.__package_name}} {
+
+        namespace "http://cisco.com/{{cookiecutter.__package_name}}";
+        prefix {{cookiecutter.__package_name}};
+
+        import tailf-common {
+            prefix tailf;
+        }
+        import tailf-ncs {
+            prefix ncs;
+        }
+        import mvr-v2 {
+            prefix mvr-v2;
+        }
+
+        description
+        "sample service discovery package";
+
+        revision {% now 'local', '%Y-%m-%d' %} {
+            description "Initial revision.";
+        }
+        augment "/mvr-v2:mvr/mvr-v2:execute" {
+            tailf:action {{cookiecutter.__package_name}} {
+                tailf:actionpoint {{cookiecutter.__package_name}}-ap;
+                input {
+                    container inputs {
+                        presence
+                        true;
+                        leaf device {
+                            type leafref {
+                                path "/ncs:devices/ncs:device/ncs:name";
+                            }
+                        }
+                        // custom inputs goes here
+
+                    }
+
+                    // this grouping should not be removed
+                    uses mvr-v2:operation-grouping;
+                }
+                output {
+                    // this should not be modified
+                    leaf result {
+                        type string;
+                    }
+                }
+            }
+        }
+    }
+    
