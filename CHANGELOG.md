@@ -1,11 +1,22 @@
 # CHANGELOG
 
 
+## v0.0.4 (2024-11-22)
+
+### Bug Fixes
+
+* fix: Added docstrings for the Template Engine, updated correlator return data type hint ([`0d150bb`](https://github.com/leninkhaidem/mvr-make-package/commit/0d150bbe5e5ebb837b1bda3a50d737f0ae36ba2b))
+
+
 ## v0.0.3 (2024-11-13)
 
 ### Bug Fixes
 
 * fix: cleanup is done using hooks ([`7013f30`](https://github.com/leninkhaidem/mvr-make-package/commit/7013f30086b0878a55a3c299613f04734edc4e4c))
+
+### Chores
+
+* chore(release): 0.0.3 [skip ci] ([`f312025`](https://github.com/leninkhaidem/mvr-make-package/commit/f312025676a5f97671026728ef39467826bfc662))
 
 
 ## v0.0.2 (2024-11-13)
