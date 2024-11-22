@@ -16,7 +16,7 @@ This tool ensures that all necessary components for an MVR package are in place,
 
 <!-- termynal -->
 ```console
-$ pip install mvr-make-package
+$ pip install mvr-make-packagetest
 
 ---> 100%
 ```
@@ -40,7 +40,7 @@ $  mvr-make-package
 
 
 ╭────────────────────────────────── Welcome ───────────────────────────────────╮
-│                           mvr-make-package - 0.0.1                           │
+│                           mvr-make-package - 0.0.x                           │
 │                                                                              │
 │ This tool generates a folder structure with boilerplate files based on user  │
 │                input. This will be used by the MVR framework                 │
