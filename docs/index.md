@@ -16,7 +16,7 @@ This tool ensures that all necessary components for an MVR package are in place,
 
 <!-- termynal -->
 ```console
-$ pip install mvr-make-packagetest
+$ pip install mvr-make-package
 
 ---> 100%
 ```
